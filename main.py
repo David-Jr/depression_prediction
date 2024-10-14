@@ -3,7 +3,7 @@ import streamlit as st
 import pickle
 import xgboost
 
-DATASOURCE: str = """ ### Fonte do Dataset
+DATASOURCE: str = """ ### Dataset Source
     We did a survey after visiting schools and colleges to make them aware of the importance of Mental Health for a student, at the same time. [(Acharya, 2022)](https://www.kaggle.com/datasets/rxnach/student-stress-factors-a-comprehensive-analysis/data)
 
     - Author: Chhabi Acharya
@@ -12,7 +12,7 @@ DATASOURCE: str = """ ### Fonte do Dataset
     - City: Dharan, Nepal
     - University: Tribhuvan University. """
 
-COLUMNS_EXPLANATION: str = """ ### Explicação das Colunas:
+COLUMNS_EXPLANATION: str = """ ### Columns Explanation:
 - **Anxiety**: range from 0 to 21, Measure : GAD-7
 - **Self-esteem**: range 0 to 30, Measure: Rosenberg Self Esteem Scale
 - **Mental Health History**: 0 if no mental health history, 1 if mental health history
@@ -40,7 +40,6 @@ if __name__ == '__main__':
 
     model_tab, data_tab, prediction_tab = st.tabs(["📈 Data", "⚙️ Model", "🔮 Prediction"])
     
-
 
     # ========================== Data Tab ==========================
     with model_tab:
