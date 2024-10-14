@@ -6,7 +6,7 @@ import xgboost as xgb
 
 def load_model(filename: str = "sxgradient_boost_model"):
     try:
-        with open(f'models\{filename}.pkl', 'rb') as file:
+        with open(f'models/{filename}.pkl', 'rb') as file:
             return pickle.load(file)
     except FileNotFoundError:
         print(f"Model file '{filename}.pkl' not found.")
@@ -17,8 +17,8 @@ def get_input_data():
     pass
 
 
-def predict_depression(input_data: dict, model):
-
+def predict_depression(input_data: dict):
+    model = pickle.load(open("models/sxgradient_boost_model.pkl", "rb"))
     input_df = pd.DataFrame(input_data)
     prediction = model.predict(input_df)
 
