@@ -122,14 +122,6 @@ if __name__ == '__main__':
         value="Neutral",
     )    
 
-    # input_data = {
-    #     'future_career_concerns': [2],
-    #     'study_load': [2],
-    #     'teacher_student_relationship': [5],
-    #     'sleep_quality': [4],
-    #     'academic_performance': [3],
-    #     'stress_level': [4],
-    # }
     input_data = {
         'future_career_concerns': [carrer_concerns_options.index(carreer_concerns)],
         'study_load': [study_load_options.index(study_load)],
@@ -138,9 +130,6 @@ if __name__ == '__main__':
         'academic_performance': [academic_performance_options.index(academic_performance)],
         'stress_level': [stress_level_options.index(stress_level)],
     }
-
-
-    # st.write(input_data)
 
     depression = predict_depression(input_data=input_data, model=load_model())
     if depression <= 4:
