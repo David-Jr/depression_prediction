@@ -131,17 +131,25 @@ if __name__ == '__main__':
         'stress_level': [stress_level_options.index(stress_level)],
     }
 
-    depression = predict_depression(input_data=input_data, model=load_model())
-    if depression <= 4:
+    # depression = predict_depression(input_data=input_data, model=load_model())
+    depression = predict_depression(input_data=input_data)
+    if depression < 5:
         st.write(f"{depression:.4} PHQ9 Scale - Minimal Depression")
-    if depression >= 5 and depression <= 9:
+    
+    elif depression >= 5 and depression < 10:
         st.write(f"{depression:.4} PHQ9 Scale - Mild Depression")
-    if depression >= 10 and depression <= 14:
+    
+    elif depression >= 10 and depression < 15:
         st.write(f"{depression:.4} PHQ9 Scale - Moderate Depression")
-    if depression >= 15 and depression <= 19:
+    
+    elif depression >= 15 and depression < 20:
         st.write(f"{depression:.4} PHQ9 Scale - Moderately Severe Depression")
-    if depression >= 20 and depression <= 27:
+    
+    elif depression >= 20 and depression <= 27:
         st.write(f"{depression:.4} PHQ9 Scale - Severe Depression")
+    
+    else:
+        st.write(f"{depression:.4} PHQ9 Scale - Unknown")
 
     # input_data = {
     #     'future_career_concerns': [2],
